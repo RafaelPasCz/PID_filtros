@@ -24,30 +24,29 @@ def dilatar(A_padded, conjunto_B):
             
             sub_janela = A_padded[r : r + altura_B, c : c + largura_B]
 
-            # Começamos assumindo que NÃO é um fit
+            #começamos assumindo que não é um fit
             houve_acerto = False 
             
-            # Loop sobre o Elemento Estruturante 
+            #loop sobre o Elemento Estruturante 
             for br in range(altura_B):
                 for bc in range(largura_B):
                     
-                    # Verificamos a condição de acerto:
-                    # Se o pixel do ES for '1' (frente)
-                    # E
-                    # o pixel correspondente na sub-janela for '1' (frente)
+                    #verificamos a condição de acerto:
+                    #se o pixel do ES for 1
+                    #E
+                    #o pixel correspondente na sub-janela for 1
                     if (conjunto_B[br, bc] == 1) and (sub_janela[br, bc] == 1):
-                        # É um "acerto" (hit).
+                        #é um hit
                         houve_acerto = True
-                        break # Não precisamos checar o resto do ES
+                        break
                 
                 if houve_acerto:
-                    break # Sai do loop de linhas também
+                    break 
             
-            # Se, após checar todo o ES, houve PELO MENOS UM acerto
+            #se, após checar todo o ES, houve PELO MENOS UM acerto
             if houve_acerto:
-                # O pixel de saída (r, c) se torna 1.
+                #o pixel de saída (r, c) se torna 1.
                 imagem_dilatada[r, c] = 1
-            # Se não houve acertos (else), o pixel de saída permanece 0.
-            
-    print("Processamento de Dilatação concluído.")
+            #se não houve acertos (else), o pixel de saída permanece 0.
+
     return imagem_dilatada

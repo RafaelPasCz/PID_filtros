@@ -1,5 +1,3 @@
-import numpy as np
-import math
 
 import numpy as np
 import math
@@ -42,7 +40,7 @@ def erodir(A_padded, conjunto_B):
             #aplicar a Lógica: "B completamente contido em A" 
             #Vamos iterar o ES para verificar a condição.
             
-            #Começamos assumindo que é um fit 
+            #começamos assumindo que é um fit 
             houve_falha = False 
             
             
@@ -50,7 +48,7 @@ def erodir(A_padded, conjunto_B):
                 for bc in range(largura_B):
                     
                 
-                    #se o pixel do ES for '1' (frente) [cite: 102] 
+                    #se o pixel do ES for '1' (frente) 
                     #E 
                     #o pixel correspondente na sub-janela for '0' (fundo)
                     if (conjunto_B[br, bc] == 1) and (sub_janela[br, bc] == 0):
