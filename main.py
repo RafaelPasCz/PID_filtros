@@ -19,6 +19,8 @@ def plotar(img, nome):
     plt.show()
 
 
+if len(sys.argv) != 2:
+    raise ValueError("Uso: main.py <nome da imagem>")
 
 mat_estruturante = [
 
